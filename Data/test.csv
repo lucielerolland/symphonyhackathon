@@ -1,0 +1,571 @@
+id,question,excerpt
+question-summary-50644356,Angular component avoiding popup from appearing correctly,"
+            The problem describes itself:
+Basically, this window is the NgbModal from the angular bootstrap module. It has a problem resizing, so I had to manually resize it, just as the table, accessing the DOM ...
+        "
+question-summary-50644344,"I have image text in my website, i would like to post it in facebook. please suggest me some tips. I tried but its improper","
+            Please suggest me tips for facebook sharings from website. I would like to post Website url, image and small content regarding the image
+        "
+question-summary-50644342,Decryption from Java to NodeJs [ AES/CBC/PKCS5PADDING IV ],"
+            I am converting Java decryption code into NodeJs.
+
+Algorithm: AES/CBC/PKCS5PADDING
+
+I have only the decryption code. Encryption is done in java.
+  Node-version: 8.4
+import javax.crypto.Cipher;
+...
+        "
+question-summary-50644292,Show/Hide google maps api does not work fine,"
+            When I click on this button, I want the value to change. When I do it, at first it changes the text on button, but the map does not appear. after that, I repeat the process and the code works fine. 
+
+...
+        "
+question-summary-50644284,make arrow icon appear when input category menu is checked CSS3,"
+            I having some inconveniences to make a font-awesome icon appear when the input is checked.
+
+It is for a portfolio gallery section, and I've added the icon inside the label, so the goal is that when I ...
+        "
+question-summary-50644278,Repeat task in firefox extension,"
+            I just started programming and still cant figure our everthing very well.
+
+Currently Im trying to write a simple firefox extension. I want to repeat my javascript code in every tab and if the user ...
+        "
+question-summary-50644226,How can I share javascript/html among several elements on a page?,"
+            I have web page with two textboxes on it.  Upon clicking on the first, I have a bootstrap modal that displays with a searchable treeview.  You click an item in the treeview, the modal closes, and the ...
+        "
+question-summary-50644215,Jquery .load for update fragment on flask\python,"
+            I'm trying to use jquery .load in my flash application to update the div, but that does not work.
+
+routes.py
+
+@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
+def ...
+        "
+question-summary-50644213,Observe div mutation via ajax request,"
+            Consider the following simple structure
+
+<button type=""button"">Click</button>
+<div class=""content""></div>
+When the button is clicked, it triggers an AJAX request which ...
+        "
+question-summary-50644204,"Javascript: If scrolled to a specific destination fade out, if scolled back up again, fade back in","
+            Ok so I'm trying to fade out something if the user scolled past 500px. This works fine! But if I want to fade it back in if the user scolls back up it doesnt work anymore.
+Whats am I missing?
+
+
+
+var ...
+        "
+question-summary-50644197,Darken the color of svg element each time on button click using D3 or JavaScript,"
+            I have a D3 graph consisting of various Nodes/Links. In this i have a functionality in which when i click on node and then click on a button it reduces the opacity of every other element except the ...
+        "
+question-summary-50644168,HTML force “Save as” dialog for content-disposition: inline,"
+            We are developing a web client for our API server. One resource serves files with content-disposition: inline. This is a customer requirement and cannot be changed. However in our administration app ...
+        "
+question-summary-50644158,I'm getting the error “Cannot set property of undefined”,"
+            I recently started to learn Javascript and it has been great so far, but I got stuck in one of my exercises.
+
+I'm trying to change the color of the form label when a color in the <select> is ...
+        "
+question-summary-50644028,"How to create text editor using HTML, CSS and JavaScript [on hold]","
+            I have static website with HTML, CSS and JavsScript, please guide how i can create text editor for my application, there user can modify there HTML, CSS and JavaScript code.
+        "
+question-summary-50643992,Detecting device motion using Javascript WITHOUT event listeners,"
+            I'm writing a browser extension for Firefox that needs to detect motion. While browsing for solutions I've come across many code snippets that use event listeners to detect motion like the one below:
+
+...
+        "
+question-summary-50643977,"JavaScript, get all unique combinations from several arrays [duplicate]","
+            I'm looking for a way to generate all possible combinations from several arrays. When it comes to 1, I was able to find solutions, however when it comes to more, then it gets problematic. To ...
+        "
+question-summary-50643967,ReactJS undefined arr.map,"
+            IÂ´m fetching data from API and then using arr.map() to filter the data* ( API returns unecessary properties ) 
+
+This is working:
+
+
+       fetchTable() {
+        const url = 'http://localhost:8000/...
+        "
+question-summary-50643965,Jest - testing try/catch,"
+            I am trying to test this class method:
+
+get () {
+  try {
+    return 'value'
+  } catch (e) {
+    return 'value2'
+  }
+}
+with:
+
+test('the get method retrieves value', () => {
+  const value = MyClass....
+        "
+question-summary-50643945,Focus and blur as expected when icons are overlaid atop a textbox,"
+            Lets say I have this HTML
+
+<div id=""container"" onclick=""container_onclick()"">
+    <span id=""search"" class=""icon-search""></span>
+    <span id=""clear"" class=""icon-clear""></...
+        "
+question-summary-50643942,Attach an Array as an attribute to the Module from the Array of Modules?,"
+            I have two array of objects namely:-
+Modules
+Learners Answered Questions (laq)
+In my Modules objects I have a property named quiz which has an array of questions. I want to compare this array with ...
+        "
+question-summary-50643926,Javascript Downloading and reading file contents from Dropbox,"
+            I am trying to download a file I uploaded as test to Dropbox. The download function works and I am getting the fileblob as well but having trouble to actually read the file contents
+
+function ...
+        "
+question-summary-50643923,"React 2 components of same Class in a switch, moving from 1 to another, doesn't render again","
+            So this is my Switch:
+
+   <Switch>
+      <Redirect exact from={`${match.url}`} to={`${match.url}/faq`} />
+      <Route exact path={`${match.url}/faq`} component={FAQPage} />
+      &...
+        "
+question-summary-50643920,NPM build confusion,"
+            I am new to working with NPM/Webpack build flow for frontend development. I've read through some tutorials and have helped some, but I have a few questions if someone can help explain them better.
+
+...
+        "
+question-summary-50643901,Adding Variable Integers But Outputting as Strings - JavaScript,"
+            I'm having a small issue adding variables together, I have a input number field set up to set the variable. Then all I'm then trying to do is post 3 numbers the first is the original, the second is ...
+        "
+question-summary-50643884,getting object properties from a event handler function,"
+            why is the 'onClick=onClickRemove(items.objectID)' giving error items not defined:
+The array List:
+
+const list = [
+{
+title: 'React',
+author: 'Jordan Walke',
+objectID: 0,
+},
+{
+title: 'Redux',
+author: '...
+        "
+question-summary-50643860,Is it possible to override javascript with something like !important? [on hold],"
+            I'm creating an extension to a plugin for WordPress, I only want to override limited amounts of the javascript. I'm trying to avoid deregistering the script.
+
+For example, I would like to do something ...
+        "
+question-summary-50643852,Effect using withLatestFrom called it even ofType(action) was not fired,"
+            I am using Angular 5, ngrx/store. I have an effect:
+
+@Effect()
+  updateAfterChanges$ = this.actions$.pipe(
+    ofType(ActionTypes.ChangesInItems),
+    withLatestFrom(
+      this.store.select(...
+        "
+question-summary-50643846,Intercom Integration,"
+            I have a website with an intercom integration. I've been on this two days already. I want to change the Intercom launcher icon and have been looking all over the internet and youtube, but could not ...
+        "
+question-summary-50643836,JavaScript detect browser inactivity period when browser is idle with dynamic iframes in the page,"
+            This piece of code works very well to capture browser inactivity but I have Iframes in the page which dynamically included with javascript code. I want even consider the mouse move and keypress events ...
+        "
+question-summary-50643819,Return empty date field when sending it by email (Google Spreadsheet),"
+            I got the below code running ok, but when a date field is empty, I get the email with related field containing 01/01/1970. How can I insert a condition that prevents these date fields from getting ...
+        "
+question-summary-50643813,Class methods undefined when instances of the class are exported,"
+            I've created a class in one file, added multiple instantiations of that class to an object and then exported that object to a second file. In the second file I can access everything defined in the ...
+        "
+question-summary-50643804,Atom - Javascript - mass red highlighting [on hold],"
+            See the screenshot below.  I get no errors when I open the page in chrome and run the script and the text displays as expected.  In Atom, the text is highlighted red.  I see no syntax errors. I guess ...
+        "
+question-summary-50643801,Refresh app part in SharePoint Online,"
+            So i just want to do this simple thing, refresh an app part in SharePoint online.
+On Google Chrome its easy just use location.reload(); with JavaScript. But how can I do the same thing in internet ...
+        "
+question-summary-50643799,Rotated linear chart,"
+            I've a problem with linear chart after rotate it.
+This chart is nested inside a div and this div have as css rule ""transform: rotate(-90deg)"".
+The problem is the following:
+when the div is not rotated ...
+        "
+question-summary-50643776,how to assign a link to the value attribute based on the value of drop-down selection,"
+            <input id=""retURL"" name=""retURL"" value="""">
+There has to be a URL passed to the value attribute based on the value of drop down.
+
+<div class=""form-group"" ng-switch-when=""Family"">
+          ...
+        "
+question-summary-50643768,How to check if user is authenticated in Firebase and Express/Node.js?,"
+            If I have a page that can only be accessed by authenticated users, how do I check if a user is authenticated or not?
+
+I tried using (firebase.auth().currentUser !== null) but I am getting an error ...
+        "
+question-summary-50643757,Jquery ¿Como Comprobar estado Dinamicamente? [on hold],"
+            Tengo que hacer un control de espera, mientras se ejecutan acciones en el backend, que van cambiando el estado de una variable, recuperando, para mostrar, el estado actual de esa variable.
+
+...
+        "
+question-summary-50643755,Use 'noty' js library in Rails 5,"
+            I am trying to make noty.js ( https://ned.im/noty/#/installation
+ - a library for notifications) work into my Rails app.
+
+I have installed it with npm 
+
+ npm install noty
+Now, it appears under ...
+        "
+question-summary-50643741,Transpile ES7 to ES6 for modern browsers,"
+            I have a react application written in es6/7 which I am happily transpiling using babel to es5 to be compatible with all browsers.
+
+This got me wondering...
+
+Is it possible to create a js bundle ...
+        "
+question-summary-50643736,Can anyone help understand why its failing the test? FCC new es6 lesson “Strings using Template Literals”,"
+            I've tried multiple different configurations of the template literal. The output is correct, but it's failing the test of ""includes template literal"".  I feel like the test isn't right, but it's ...
+        "
+question-summary-50643735,Print mongodb function using js file,"
+            Actually, i use some js files to execute request.
+But at this point, i try to print (on mongodb console) result of this fonction (stored on js file, using load).
+
+var results = [];
+db.departments....
+        "
+question-summary-50643719,Javascript: Change Global Var Locally,"
+            Easy question. Just an explict look:
+
+ var token = ""12345""
+
+function einloggen(){
+    var test = particle.login({username: userName, password: passWord});
+    test.then(
+    function (data) {
+         ...
+        "
+question-summary-50643678,Responsive image does not resize,"
+            Hello to all the community! I have a problem, please. Currently, I am creating a web page with images and I will like responsive renders. I would like my last 4 images to go under each other by being ...
+        "
+question-summary-50643643,Brackets IDE Wrong Error,"
+            I started to use the Brackets IDE and I like it. When I write HTML code and reference external javascript code everything works, but if I have a javascript function that gets run by my HTML (e.g ...
+        "
+question-summary-50643600,How to animate line graph in D3,"
+            I have a project that I'm working on that was inspired by the Amazing NYTimes Interactive Charts where you would draw the chart and see how you did compared to real data. I want to make a simple ...
+        "
+question-summary-50643599,Absolute positioned element overflows display in flot tooltip,"
+            I'm using jQuery Flot in my app but I have a problem with my most right tooltip which is at the end of the window. As you can see from the img below when I hover left point on the green line of graph ...
+        "
+question-summary-50643487,How to resolve the given error in angular core element_ref.d.ts?,"
+            After ng test,
+
+expected output:  tests get executed, I see x/x pass/failed tests.
+
+actual output: 
+
+Version: webpack 4.8.3
+Time: 3128ms
+Built at: 06/01/2018 2:12:39 PM
+       Asset      Size     ...
+        "
+question-summary-50643478,Apostrophe cms: An error occurred saving the document,"
+            In my Apostrophe app I have a page type called backend:
+
+{% extends 'apostrophe-templates:layout.html' %}
+
+{% block title %}{{ super() }} | Home{% endblock %}
+
+{% block main %}
+  <div class=""...
+        "
+question-summary-50643466,How to pass html tags with text to EMAIL BODY in mail popup opened with MAILTO [duplicate],"
+            I want set the body of mailto popup with coloured/bold texts
+
+I have gone through many links but not able to get the solution.
+
+following is the code I am actually using... I am trying to set this
+
+&...
+        "
+question-summary-50643463,How can I use this in the left side of the object destructuring assignment?,"
+            (This question is not specific to Vue, but it is in a Vue project, that is why the strange use of the this in front of the functions and variables.)
+
+I have a function that returns an object which is ...
+        "
+question-summary-50643458,ReCharts - not able to see label when right aligned for stacked bar chart,"
+            I am creating an example of StackBarChart using Recharts library but I am not able to see the label when it's position is set to ""right"" though I am able to show the other label positions.
+
+<...
+        "
+question-summary-50643449,Send JSON from one component to another using routing and not display on URL?,"
+            I am trying to pass JSON on routing URL here is my 
+
+app.route.ts code 
+
+ {path: 'calculator', component: CalculatorComponent,data : {some_data : null}},
+and my code to route the data is 
+
+ this....
+        "
+question-summary-50643440,"RxJS operator that waits for quiet period in event stream, but in case of busy event stream does not wait for ever","
+            The scenario:
+I have a stream of events, each event should result in the updated display of information (event stream is from websockets and the display is in a highcharts chart, but that is not ...
+        "
+question-summary-50643387,google analytics disable on website,"
+            I want to disable google analytics on my website. Currently I have not used any google analytics in my javascript. Having looked at a few places I found:
+window['ga-disable-UA-XXXXX-Y'] = true;
+The ...
+        "
+question-summary-50643378,External Javascript running after local Javascript,"
+            I have a PHP page with some Javascript/Jquery code inside it.
+
+I have something like this:
+
+$(""#myButton"").click(function() {
+
+    my_external_function();
+
+    other code here...
+}
+but ...
+        "
+question-summary-50643321,Detect when tab is slowed down,"
+            I'm making a HTML5 game (with WebSockets) and frequent health bar updates are delivered. When I go to another application and return to the game later, all these updates are applied at once, so the ...
+        "
+question-summary-50643302,Addeventlistener on a querySelectorAll() with classlist,"
+            I am trying to add an event listener but no result came. I know javascript has a hoisting feature but I believe I tried all except the correct solution.Pen
+
+    const cbox = document.querySelectorAll(""...
+        "
+question-summary-50643289,Set encoding type for Pdf.js rendering,"
+            Document which contains both English and Arabic characters is rendered using pdf.js. It renders correctly on Firefox and Chrome. Yet it does not render Arabic characters correctly in Internet Explorer ...
+        "
+question-summary-50643280,Hide delivery counter in weekend,"
+            I am using the following javascript, to display a countdown on my shop, counting down to the next dispatch.
+
+I really would like to hide in the div completely in the weekend, instead of displaying ""2 ...
+        "
+question-summary-50643247,Post id to php and get the json data,"
+            I have some MySQL datas in a table and each row has a button. If I click on the button, a bootstrap modal appears with that datas. I convert the MySQL datas to json. The .view_data is the button for ...
+        "
+question-summary-50643227,Create table(specific position in page)-text boxes(save) -Double click or mouse movement change background color in a cell,"
+            i want to have 2 text boxes.I want to save the value of what i wrote.When,i press ""Approved"" the button the text box should disappear what i wrote and save it.I did reset,but i failed.
+
+Next thing,i ...
+        "
+question-summary-50643207,How to replace all spaces present in a string with underscore using javascript? [duplicate],"
+            I have a string with spaces separating words. I want to replace all the spaces in the string with underscore. Please tell me any small code for that because my solution is taking too much space.
+...
+        "
+question-summary-50643159,Javascript: How can I Choose a specific Part from an Output,"
+            easy question:
+
+ FunctionOutput: Promise {
+  _c: 
+   [ { promise: [Object],
+       resolve: [Function],
+       reject: [Function],
+       ok: [Function],
+       fail: [Function],
+       domain: null } ...
+        "
+question-summary-50643126,how to find which script in a webpage actually overwrite the window.open() to window.open = true,"
+            I have a javascript function which actually use the window.open() method to load a page in an Iframe. But I'm sure that by some another script the window.open is overwrited. Thats why I'm getting an ...
+        "
+question-summary-50643122,Why does Angular Mat Table 2 selection model fail?,"
+            This is a simple enough question (TLDR;) :
+
+Why does Angular Mat Table 2 selection model fail?
+
+In particular why does it fail with a carbon copy of an object passed to either it's select() or toggle()...
+        "
+question-summary-50643104,Remaking directive into a component in angularJS,"
+            Im trying to convert this directive into a component, but Im not sure how to go about it. 
+
+  export class TableRowBSHeaderDirective implements ng.IDirective {
+    restrict: string = 'A';
+
+    ...
+        "
+question-summary-50643096,Random image generator project (Javascript),"
+            While completing a project for FreeCodeCamp I had the idea to create a simple website which can get me a random picture of a cat when pressing a button. So I found the http://thecatapi.com/ which will ...
+        "
+question-summary-50643089,call a method on the fly using es6 import in node.js,"
+            var MCrypt = require('mcrypt').MCrypt;
+How is it like to use import instead of require to do above code? I don't think it's possible to do in one line.
+        "
+question-summary-50643088,Is there the same router for Vue like angular ui-router?,"
+            Is there the same router for Vue like angular ui-router? What router is the best for Vue?
+        "
+question-summary-50643078,Modify element when clicked,"
+            I apologize in advance if this is a basic question. I'm currently studying web development and trying to create stuff as I learn. My question is this, is there a way to style delete or otherwise ...
+        "
+question-summary-50643064,Why sorting on a date type field fails in JS but is OK in Python?,"
+            Summary: a HTTP POST query yields different results in JS and in Python, in the case of JS the request for a sort operation is not taken into account.
+While the question is related to Elasticsearch ...
+        "
+question-summary-50643035,json_encode adds double inverted commas by default,"
+            I have been facing an issue on json_encode while transferring to JS file. I have tried several links suggested here, but could not find a solution. 
+
+<p>
+<img src=\'https://dzf8vqv24eqhg....
+        "
+question-summary-50642962,Switch between numbers and run function on scroll,"
+            How could I toggle class between these numbers both on click and on scroll..? So, basically I want to switch between these when rotating mouse wheel, and fire some sort of a callback after that...  
+
+...
+        "
+question-summary-50642960,I want to make a Hexagon Word Puzzle game with Html5 and Javascript [on hold],"
+            I am trying to write a JavaScript + html code that turns random words into hexagonal puzzles. But I could not figure out how to do it.
+
+I want to do the same in this game.
+        "
+question-summary-50642948,Changing a ISO date to a Short date JavaScript,"
+            I currently have a function setup to get the following two weeks or months from the selected date from a input date field. However, the problem I'm facing is that I want to get the date to output DD/...
+        "
+question-summary-50642918,$.scrollify.next() is not a function?,"
+            I have succesfully implemented scrollify and when scrolling with the mousewheel it works fine.
+Except when i tried implementing a ""next"" button it says ""$.scrollify.next() is not a function"" while on ...
+        "
+question-summary-50642850,Google App Script for unique random numbers,"
+            Can someone help me with script to write unique random numbers to Google sheets using the following logic?  Pick one random number from 1-20, next pick one from 2-21 but excluding pick already chosen ...
+        "
+question-summary-50642833,Hide a list when clicking outside (part 2),"
+            The code below partly works, clicking the button toggles the menu. When the menu is visible I can click anywhere to close it.
+
+But, if I click the button when the menu is visible it hides and then ...
+        "
+question-summary-50642829,"I want to play vimeo video one by one my code is give below, I am changing iframe src when first video finsihed but is not working","
+            $(document).ready(function() {
+    var video_list = [""271205808"", ""271200492"", ""271205808""];
+    var video_index = 0;
+    var video_player = document.querySelector('#vimeo_id_0');
+    var player = new ...
+        "
+question-summary-50642797,Retrieving parameter from query string based on another string in Javascript [duplicate],"
+            My app in Google Apps Script gets data from a form that I want to process.
+The element form is received and contains the different parameters and values.
+
+If I log the element form it looks like {uid=...
+        "
+question-summary-50642792,Blur not working as expected,"
+            I'm trying to apply blur effect on dialog pop-up.
+
+I'm using primeng p-dialog component.
+
+<p-panelMenu [model]=""items"" [style]=""{'width':'300px'}""></p-panelMenu>
+
+<p-dialog header=""...
+        "
+question-summary-50642789,JavaScript show / hide html elements,"
+            Is there a cleaner way of achieving this in JavaScript,
+I'm trying to show / hide items based on a click function
+
+var overview = document.getElementById(""overview""); 
+var schedule = document....
+        "
+question-summary-50642764,GET http://localhost/v5/api/checker 404 (Not Found) Slim,"
+            I'm trying to do a function with call AJAX to php but when I click the button it shows this error, some one knows how can I solve it? My code below.
+
+PHP:
+
+$app->get('/checker', function () {
+    $...
+        "
+question-summary-50642751,No code gets executed after loop with promises,"
+            So I have a function which takes an id and returns the corresponding property map via a promise. So I made a loop and iterate my function with all my Ids but it never executes the code outside of the ...
+        "
+question-summary-50642741,cdn is working fine but enqueue is not working,"
+            I am trying to include a jquery library in my code and I did this:
+
+<script type=""text/javascript"" src=""http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js""></script>
+This works ...
+        "
+question-summary-50642703,Randomise selection from 2D Array,"
+            I'm trying to create a basic quiz app in Android Studio, but I'm still fairly new to this and not sure what terms to use to search for a solution. Hopefully someone here can help.
+
+The user can select ...
+        "
+question-summary-50642679,Using jQuery / JavaScript to float element to right,"
+            Fiddle
+
+Hello,
+
+I found sticky sidebar jQuery script, but the fixed element (sidebar) floats to the left once I start scrolling down. I am trying to keep it on the right-hand side the whole time. Also,...
+        "
+question-summary-50642677,Trigger event for an svg element that moves behind another one?,"
+            the desired output is for example: When the red masked rectangle is moving behind one of the ""holes"", the hole needs to change the fill (or some other attr).
+
+Is it possible to add some sort of event ...
+        "
+question-summary-50642672,how to implement command that can be call by upper panel button and also by mouse right click menu ?,"
+            i need to implement web client application - that contain some canvas and upper button panel.   
+
+on this canvas i will have an elements that are different items - and pressing on each element and ...
+        "
+question-summary-50642668,JS input value assigning to variable - undefined,"
+            I'm really fresh to JS
+Need some help because I don't understand a thing.
+If I try to assign the whole line to variable, I can use this variable later, but the outcome of that is blank or undefined, ...
+        "
+question-summary-50642662,How to get json data from url and save it to the const variable [TypeScript],"
+            How to get json data from url and save them into the const variable in TypeScript?
+
+const data = (get json from url);
+Output:
+
+data = [
+                {
+                    ""name"": ""Peter"",
+         ...
+        "
+question-summary-50642660,How to compare (and add if don't exists) elements from 2 arrays at Google App Script?,"
+            everyone I'm trying to get the best way to compare two arrays and add a new element with value 0 if there's any difference between them. First I got this 2 arrays:
+
+  var niv = [""FB"",""Bach"",""FPSE"",""...
+        "
+question-summary-50642637,How to add Dynamic element,"
+            I wander create dynamic elemnts from array, I fetched array song from iTunes Api where I have 50 song, i search them by title and now I want display them dynamicly, when I found more than 6 I want ...
+        "
+question-summary-50642627,How to detect if the back button is pressed in android /ios phone using react js,"
+            I have developed a responsive website using React js.and i want to show confirmation popup when user press on the Back button of android/ios mobile How to detect if the back button is pressed in a ...
+        "
+question-summary-50642624,Get string from a successful regex?,"
+            I'm trying to manipulate a string that has tested as a positive match against my regex statement.
+
+My regex statement is /\[table=\d](.*?)\[\/table] / gmi and an example of a positive match would be [...
+        "
+question-summary-50642609,How to pass value from javascript to iOS UIWebView,"
+            I need to pass javascript variable to iOS UIWebView, i did the same very easily with Android, but couldnt do here. 
+
+What i need is i will click on a link in webview and that link will in-turn call ...
+        "
+question-summary-50642585,JS code not being accepted in freecodecamp,"
+            I'm working through freecodecamp and am on the following excercise:
+
+https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup
+
+Now my code is as follows:...
+        "
+question-summary-50642561,Request is not finished yet error with mongoDB and Express,"
+            I get a message Request is not finished yet and no data will be sent, if I do patch and delete requests in my app ( the post and get request work well) 
+
+Here are my requests
+
+In service (front, ...
+        "
+question-summary-50642541,on clicking image home page should be display?,"
+            <html>
+ </body>
+  <div>
+    <img class=""floatLeftClass"" id=""float-Left-Class"" src=""images/logo.png"" 
+    width=""100"" height=""50"">
+  </div>
+ </body>
+</html>   
+...
+        "
+question-summary-50642531,Convert feet into mm in javascript or JQuery,"
+            I have a code for converting feet to Mm its working well but i need that converted MM to be placed in text field it was displaying below to the feet text field.so kindly check the code and give me ...
+        "
