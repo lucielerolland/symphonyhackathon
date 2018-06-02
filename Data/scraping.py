@@ -26,10 +26,10 @@ def get_contents(url):
     i = []
     for k in tree.xpath('//div'):
         if 'question-summary' in k.classes:
-            id, question, excerpt = get_id_question_and_excerpt(k)
+            qid, question, excerpt = get_id_question_and_excerpt(k)
             q += question
             e += excerpt
-            i += id
+            i += qid
 
     return pd.DataFrame({'id': i, 'question': q, 'excerpt': e})
 
@@ -48,5 +48,6 @@ def scrape_tag(tag, population):
     return scrape_df
 
 if __name__ == '__main__':
-    pipou = scrape_tag('java', 1000)
-    pipou.to_csv('test.csv', index=False, columns=['id', 'question', 'excerpt'])
+    tag = 'sql'
+    pipou = scrape_tag(tag, 1000)
+    pipou.to_csv(tag + '.csv', index=False, columns=['id', 'question', 'excerpt'])
