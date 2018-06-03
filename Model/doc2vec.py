@@ -1,15 +1,84 @@
 import pandas as pd
 from gensim.models import doc2vec, Doc2Vec
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.linear_model import LogisticRegression
+import logging
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+import csv
+import os
 
 
-def df_to_doc(df, id_field, doc_field):
+def df_to_doc(df, doc_field):
+    df.reset_index(inplace=True)
 
-    return df.apply(lambda l: doc2vec.LabeledSentence(tags=[l[id_field]], words=l[doc_field].split(' ')), axis=1)
+    return df.apply(lambda l: doc2vec.TaggedDocument(tags=[l['index']], words=l[doc_field].strip().split(' ')), axis=1)
 
-questions = pd.read_csv('../Data/questions_sample.csv')
+questions = pd.read_csv('../Data/questions.csv')
 
-doc = df_to_doc(questions, 'id', 'question')
+doc = {}
+doc['exc'] = list(df_to_doc(questions, 'excerpt'))
+doc['q'] = list(df_to_doc(questions, 'question'))
+seed = 1010
 
-model = Doc2Vec(doc, size=100, window=2, alpha=.3, min_alpha=.01, min_count=5)
+for w in range(1000):
+    corpus = np.random.choice(['exc', 'q'], 1, p=[.5, .5])[0]
+    size = np.random.randint(4, 40)*5
+    dm = np.random.binomial(1, .5, 1)[0]
+    window = np.random.randint(1, 15)
+    alpha = (3)**(np.random.randint(-10, 3))
+    alpha_min = alpha / (3)**(np.random.randint(1, 10))
+    min_count = np.random.randint(0, 10)
+    sample = 1**(np.random.randint(-5, 0))
+    n_iter = np.random.randint(5, 15)
 
-print('pipou')
+    alpha_infer = (3)**(np.random.randint(-10, 3))
+    alpha_min_infer = alpha / (3) ** (np.random.randint(1, 10))
+    step_infer = np.random.randint(2, 15)
+
+    model = Doc2Vec(doc[corpus], vector_size=size, dm=dm, window=window, min_count=min_count, seed=seed, alpha=alpha,
+                    min_alpha=alpha_min, sample=sample, iter=n_iter)
+
+    # Metric 1: avg cosine similarity of a vector with its inference by the model
+
+    cosim = []
+    for i in range(len(questions)):
+        a = model.docvecs[i]
+        b = model.infer_vector(doc[corpus][i].words, alpha=alpha_infer, min_alpha=alpha_min_infer, steps=step_infer)
+        cosim.append(cosine_similarity(np.vstack((a, b)))[0, 1])
+
+    mean_cosim = sum(cosim)/len(cosim)
+
+    # Metric 2: how well do vectors predict a question's tag
+
+    train_test = np.random.permutation(len(questions))
+    cutoff = int(.9*len(questions))
+    train = train_test[0:cutoff]
+    test = train_test[cutoff:len(questions)]
+    model_lr = LogisticRegression()
+    X_train = model.docvecs[train[0]]
+    for j in train[1:]:
+        X_train = np.vstack((X_train, model.docvecs[j]))
+    model_lr.fit(X_train, questions['tag_id'].ix[train])
+    X_test = model.docvecs[test[0]]
+    for j in test[1:]:
+        X_test = np.vstack((X_test, model.docvecs[j]))
+    y_pred_test = model_lr.predict(X_test)
+    precision, recall, fscore, support = precision_recall_fscore_support(questions['tag_id'].ix[test], y_pred_test)
+
+    if not os.path.isfile("param_exploration.csv"):
+        exports_name = ['corpus', 'size', 'dm', 'window', 'min_count', 'alpha', 'alpha_min', 'sample', 'n_iter',
+                        'alpha_infer', 'alpha_min_infer', 'step_infer', 'mean_cosim', 'precision', 'recall', 'fscore',
+                        'support']
+
+        with open("param_exploration.csv", "w") as f:
+            writer = csv.writer(f)
+            writer.writerows([exports_name])
+
+    exports = [corpus, size, dm, window, min_count, alpha, alpha_min, sample, n_iter, alpha_infer, alpha_min_infer,
+               step_infer, mean_cosim, precision, recall, fscore, support]
+
+    with open("param_exploration.csv", "a") as f:
+        writer = csv.writer(f)
+        writer.writerows([exports])

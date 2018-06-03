@@ -39,6 +39,7 @@ for i, k in enumerate(tags):
     proba_dic['asker'][k][i+1] = .25
     df = pd.read_csv(k+'.csv')
     df['tag'] = k       # for testing purposes
+    df['tag_id'] = i
     questions = pd.concat([questions, df]).reset_index(drop=True)
 
 questions['id'] = questions.apply(lambda l: int(l['id'].split('-')[2] + proba_dic['rank'][l['tag']]), axis=1)
@@ -50,7 +51,7 @@ questions['askee'] = questions['tag'].apply(lambda l: np.random.choice(a_users, 
 questions['status'] = np.random.choice(q_status, len(questions))
 questions['good_match'] = questions['status'].apply(lambda l: l in ['answered', 'documented'])
 questions['datetime_asked'] = gen_random_date_vector(len(questions))
-questions['datetime_latest'] = questions['datetime_asked'].apply(lambda l: l+dt.timedelta(days= np.random.exponential(1)))
+questions['datetime_latest'] = questions['datetime_asked'].apply(lambda l: l+dt.timedelta(days=np.random.exponential(1)))
 
 questions.ix[np.random.permutation(len(questions))[0:5000],:].to_csv('questions_sample.csv', index=False)
 
