@@ -112,8 +112,8 @@ def explore_tuning(input_file, rank, n_iter, output_file):
                     alpha=row['alpha'].values[0], min_alpha=row['alpha_min'].values[0], sample=row['sample'].values[0], iter=row['n_iter'].values[0])
     train_test = np.random.permutation(len(questions))
     cutoff = int(.9 * len(questions))
-    train = train_test[0:cutoff][0:50]
-    test = train_test[cutoff:len(questions)][0:10]
+    train = train_test[0:cutoff][0:50000]
+    test = train_test[cutoff:len(questions)][0:10000]
 
     X_train = doc_to_X(model, train)
     X_test = doc_to_X(model, test)
@@ -193,7 +193,7 @@ if __name__ == '__main__':
         tuning = tuning.sort_values('mean_cosim', ascending=False).reset_index()
         path = "lr_exploration"
         rank = 1
-        n_iter = 10
+        n_iter = 100
         explore_tuning(tuning, rank, n_iter, path)
     else:
         param_explo = "param_exploration.csv"
