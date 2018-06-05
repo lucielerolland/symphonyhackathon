@@ -7,6 +7,8 @@ from sklearn.linear_model import LogisticRegression
 import logging
 import csv
 import os
+import pickle
+import ast
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
@@ -99,65 +101,102 @@ def tune(search_iter, file):
             writer.writerows([exports])
 
 
-def explore_tuning(input_file, top, n_iter, output_file):
+def explore_tuning(input_file, rank, n_iter, output_file):
 
-    tuning = pd.read_csv(input_file)
-    tuning.sort_values('mean_cosim', ascending=False).reset_index(inplace=True)
+    output_file += '_' + str(rank) + '.csv'
 
     questions, doc = load_data()
 
-    for idx, row in tuning.head(top).iterrows():
-        model = Doc2Vec(doc[row['corpus']], vector_size=row['size'], dm=row['dm'], window=row['window'], min_count=row['min_count'], seed=seed,
-                        alpha=row['alpha'], min_alpha=row['alpha_min'], sample=row['sample'], iter=row['n_iter'])
-        train_test = np.random.permutation(len(questions))
-        cutoff = int(.9 * len(questions))
-        train = train_test[0:cutoff]
-        test = train_test[cutoff:len(questions)]
+    row = input_file.iloc[[rank]]
+    model = Doc2Vec(doc[row['corpus'].values[0]], vector_size=row['size'].values[0], dm=row['dm'].values[0], window=row['window'].values[0], min_count=row['min_count'].values[0], seed=seed,
+                    alpha=row['alpha'].values[0], min_alpha=row['alpha_min'].values[0], sample=row['sample'].values[0], iter=row['n_iter'].values[0])
+    train_test = np.random.permutation(len(questions))
+    cutoff = int(.9 * len(questions))
+    train = train_test[0:cutoff][0:50]
+    test = train_test[cutoff:len(questions)][0:10]
 
-        X_train = doc_to_X(model, train)
-        X_test = doc_to_X(model, test)
+    X_train = doc_to_X(model, train)
+    X_test = doc_to_X(model, test)
 
-        Y = questions['good_match'].apply(lambda l: 1 if l else 0)
+    Y = questions['askee_id']
 
-        Y_train = Y.ix[train]
-        Y_test = Y.ix[test]
+    Y_train = Y.ix[train]
+    Y_test = Y.ix[test]
 
-        for iterations in range(n_iter):
+    for iterations in range(n_iter):
 
-            if iterations % 10 == 0:
-                print('Running model', row['index'], 'iter', iterations)
+        if iterations % 10 == 0:
+            print('Running model', row['index'], 'iter', iterations)
 
-            penalty = np.random.choice(('l1', 'l2'), 1)[0]
-            c = np.random.uniform(0, 1)
-            multiclass = np.random.choice(('ovr', 'multinomial'), 1)[0]
-            tol = 10**(-np.random.randint(2, 10))
-            solver='newton-cg'
-            max_iter = 25*np.random.randint(4, 12)
+        penalty = 'l2'
+        c = np.random.uniform(0, 1)
+        multiclass = np.random.choice(('ovr', 'multinomial'), 1)[0]
+        tol = 10**(-np.random.randint(2, 10))
+        solver = 'newton-cg'
+        max_iter = 25*np.random.randint(4, 12)
 
-            model_lr = LogisticRegression(penalty=penalty, C=c, multi_class=multiclass, tol=tol, solver=solver,
-                                          max_iter=max_iter, random_state=seed)
+        model_lr = LogisticRegression(penalty=penalty, C=c, multi_class=multiclass, tol=tol, solver=solver,
+                                      max_iter=max_iter, random_state=seed)
 
-            model_lr.fit(X_train, Y_train)
-            y_pred_test = model_lr.predict(X_test)
-            precision, recall, fscore, support = precision_recall_fscore_support(Y_test, y_pred_test)
+        model_lr.fit(X_train, Y_train)
+        y_pred_test = model_lr.predict(X_test)
+        precision, recall, fscore, support = precision_recall_fscore_support(Y_test, y_pred_test)
 
-            if not os.path.isfile(output_file):
-                exports_name = ['model_index', 'penalty', 'c', 'multiclass', 'tol', 'max_iter', 'precision', 'recall',
-                                'fscore', 'support']
+        if not os.path.isfile(output_file):
+            exports_name = ['model_index', 'penalty', 'c', 'multiclass', 'tol', 'max_iter', 'train', 'precision', 'recall',
+                            'fscore', 'support']
 
-                with open(output_file, "w") as f:
-                    writer = csv.writer(f)
-                    writer.writerows([exports_name])
-
-            exports = [row['index'], penalty, c, multiclass, tol, max_iter, precision, recall, fscore, support]
-
-            with open(output_file, "a") as f:
+            with open(output_file, "w") as f:
                 writer = csv.writer(f)
-                writer.writerows([exports])
+                writer.writerows([exports_name])
+
+        exports = [row['index'].values[0], penalty, c, multiclass, tol, max_iter, train, precision, recall, fscore, support]
+
+        with open(output_file, "a") as f:
+            writer = csv.writer(f)
+            writer.writerows([exports])
+
+        print('written at', output_file)
+
+
+def save_final_model(param_explo, lr_explo, row):
+    questions, doc = load_data()
+    d2v_tuning = pd.read_csv(param_explo)
+    lr_tuning = pd.read_csv(lr_explo)
+    lr_best_row = lr_tuning.iloc[[row]]
+    d2v_best_row = d2v_tuning.iloc[[lr_best_row['model_index'].values[0][0]]]
+    d2v_model = Doc2Vec(doc[d2v_best_row['corpus'].values[0]], vector_size=d2v_best_row['size'].values[0], dm=d2v_best_row['dm'].values[0],
+                    window=d2v_best_row['window'].values[0], min_count=d2v_best_row['min_count'].values[0], seed=seed,
+                    alpha=d2v_best_row['alpha'].values[0], min_alpha=d2v_best_row['alpha_min'].values[0], sample=d2v_best_row['sample'].values[0],
+                    iter=d2v_best_row['n_iter'].values[0])
+
+    d2v_model.save('d2v')
+
+    lr_model = LogisticRegression(penalty=lr_best_row['penalty'].values[0], C=lr_best_row['c'].values[0], multi_class=lr_best_row['multiclass'].values[0],
+                                  tol=float(lr_best_row['tol'].values[0]), solver='newton-cg', max_iter=lr_best_row['max_iter'].values[0],
+                                  random_state=seed)
+
+    train = ast.literal_eval(lr_best_row['train'].values[0])
+    X_train = doc_to_X(d2v_model, train)
+    Y_train = questions['askee_id'].ix[train]
+    lr_model.fit(X_train, Y_train)
+
+    pickle.dump(lr_model, open('lr_model.pkl', 'w'))
 
 
 if __name__ == '__main__':
+    mode = 'estim'
     seed = 1010
-    path = "param_exploration.csv"
-    path2 = "lr_exploration.csv"
-    explore_tuning(path, 1, 1, path2)
+
+    if mode == 'estim':
+        tuning = pd.read_csv("param_exploration.csv")
+        tuning = tuning.sort_values('mean_cosim', ascending=False).reset_index()
+        path = "lr_exploration"
+        rank = 1
+        n_iter = 10
+        explore_tuning(tuning, rank, n_iter, path)
+    else:
+        param_explo = "param_exploration.csv"
+        lr_explo = "lr_exploration.csv"
+        row = 1
+        save_final_model(param_explo, lr_explo, row)
